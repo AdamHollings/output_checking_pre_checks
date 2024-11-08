@@ -47,9 +47,9 @@ def check_csv_format(input_file):
 
 def validate_inputs(context, input_file):
     if not check_file_type(input_file):
-        return f"File type {get_file_extension(input_file)} is not allowed. Do you want to continue? (yes/no)"
+        return f"File type {get_file_extension(input_file)} is not allowed. Your output will likely be rejected. Do you want to continue? (yes/no)"
     if not check_context_length(context):
-        return "Context string is less than 250 characters. Do you want to continue? (yes/no)"
+        return "Context string is less than 250 characters. Your output will likely be rejected. Do you want to continue? (yes/no)"
     if input_file.endswith('.csv'):
         is_valid, message = check_csv_format(input_file)
         if not is_valid:
